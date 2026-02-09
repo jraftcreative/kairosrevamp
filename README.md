@@ -30,17 +30,36 @@ npm run preview
 
 ### Completed
 - [x] Project setup
-- [x] Header/Navigation
-- [x] Hero section structure
-- [x] Basic homepage layout
+- [x] Header/Navigation with mobile menu
+- [x] Hero section
+- [x] "Financial Planning Made Simple" tagline
+- [x] Our Approach section (4 pillars)
+- [x] Our Expertise section with CTA
+- [x] Image strip (3 gallery images)
+- [x] Services cards section
+- [x] Partner CTA section
+- [x] Footer with navigation, legal, services links
 
-### Pending
-- [ ] Full page content
-- [ ] Additional pages (About, Services, Team, etc.)
-- [ ] Images/assets from original design
-- [ ] Footer
-- [ ] Mobile responsiveness polish
-- [ ] Deployment setup
+### Pending - Images Needed
+- [ ] `/public/images/hero-team.jpg` - Main hero team photo (outdoor dining)
+- [ ] `/public/images/gallery-1.jpg` - Team presenting
+- [ ] `/public/images/gallery-2.jpg` - Individual team member
+- [ ] `/public/images/gallery-3.jpg` - Team gathering
+- [ ] `/public/images/team-adventure.jpg` - Team adventure photo (vehicles)
+
+### Pending - Pages
+- [ ] About page
+- [ ] Our Approach page
+- [ ] Services page (+ sub-pages)
+- [ ] Our Team page
+- [ ] Career page
+- [ ] Contact page
+- [ ] FAQ, Terms, Privacy pages
+
+### Pending - Polish
+- [ ] Mobile responsiveness fine-tuning
+- [ ] Deployment to GitHub Pages
+- [ ] Meta tags and SEO
 
 ---
 
