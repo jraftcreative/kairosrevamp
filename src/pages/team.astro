@@ -46,10 +46,37 @@ const teamRow2 = [
     description: 'Aloysius joined this industry 7 years ago, he specialises in securing a safe and stable passive stream of income for his clients. Having joined Kairos, he finds deep gratitude for his greatest mentor, Ronnie Wong, as well as appreciation for the lovely members in Kairos. He aims to help others by making sure that they\'re well protected in any case of unforeseen circumstances and to be financially free by growing their wealth.',
   },
   {
+    name: 'Loretta',
+    role: 'Financial Advisor',
+    image: `${base}images/team-loretta.jpg`,
+    description: 'Loretta is passionate in helping people simplify their finances and make confident decisions with their money. With over 20 years in the FA industry, her approach has always been to take the time to understand each client\'s goals, explain options in plain language, and build strategies that can stand the test of time. She joined Kairos because her beliefs aligned with the team: that doing good work starts with being happy at work. Her role isn\'t just to manage money, but to give clients peace of mind, knowing they\'re supported by advice they can trust.',
+  },
+  {
+    name: 'Linda',
+    role: 'Financial Advisor',
+    image: `${base}images/team-linda.jpg`,
+    description: 'Linda has built close to 17 years of experience in her career in financial services after she left her advertising role. Her motivation stems from a personal place\u2014having witnessed firsthand challenges that arise without proper retirement and insurance planning within her own family. This experience instilled a determination in her to do things right for her generation and people she holds dear. It is this foundational belief that she brings to every client she meets. Now, as part of an independent financial adviser firm, she has the confidence and breadth of choice to provide truly comprehensive and unbiased solutions. Linda is dedicated to serving her growing client base, which now comprises over 150 individuals and families, guiding them toward secure and well-planned financial futures.',
+  },
+];
+
+const teamRow3 = [
+  {
+    name: 'Ellie',
+    role: 'Financial Advisor',
+    image: `${base}images/team-ellie.jpg`,
+    description: 'Ellie has been in the financial industry for about 10 years, working with a mix of clients\u2014from families to expats\u2014on wealth planning and investments. Before joining Kairos, she spent over 10 years as a forex broker. She was drawn to Kairos because of the team\u2019s culture and the way they truly value people. For Ellie, financial advisory is all about helping clients make informed decisions, fully understanding the impact of each choice, so they can move forward with confidence.',
+  },
+  {
+    name: 'Sherman',
+    role: 'Financial Advisor',
+    image: `${base}images/team-sherman.jpg`,
+    description: 'Sherman is a financial advisor with 7 years of experience, managing over S$5 million in client investments. Having started his journey while studying Accountancy at SMU, he joined Kairos with a simple goal: to help people build clear, sustainable money systems that support their life goals and long-term freedom.',
+  },
+  {
     name: 'Vivien',
     role: 'Financial Advisor',
     image: `${base}images/team-vivien.jpg`,
-    description: 'Vivien has helped hundreds of Singaporean families secure comprehensive protection through tailored insurance solutions.',
+    description: 'Vivien joined Kairos Advisory Group in 2024 after leaving the bank. With a \u2018client-first\u2019 philosophy, she has more than 2000 client engagements. She has been architecting financial planning in helping her HNW clients in terms of Wealth Distribution and Risk Management as well as helping the mass market in terms of Wealth Accumulation & Wealth Protection.',
   },
 ];
 ---
@@ -71,7 +98,7 @@ const teamRow2 = [
   </section>
 
   <!-- Team Row 1 - 4 members -->
-  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+  <section class="py-4 md:py-8 px-6 md:px-12 lg:px-20 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {teamRow1.map((member) => (
@@ -91,10 +118,30 @@ const teamRow2 = [
   </section>
 
   <!-- Team Row 2 -->
-  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+  <section class="py-4 md:py-8 px-6 md:px-12 lg:px-20 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {teamRow2.map((member) => (
+          <div>
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full aspect-[3/4] object-cover object-top mb-6"
+            />
+            <h3 class="font-serif text-xl md:text-2xl text-[#1E3A5F] mb-1">{member.name}</h3>
+            <p class="text-[#1E3A5F] italic text-sm mb-3">{member.role}</p>
+            <p class="text-[#666666] text-sm leading-relaxed">{member.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Row 3 -->
+  <section class="py-4 md:py-8 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamRow3.map((member) => (
           <div>
             <img
               src={member.image}

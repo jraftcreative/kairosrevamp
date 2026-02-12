@@ -29,44 +29,61 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <!-- Form -->
         <div class="border border-gray-200 rounded-lg p-8">
           <h2 class="text-xl font-bold text-[#1E3A5F] mb-8">Send us a message</h2>
-          <form class="space-y-6">
+          <form id="contact-form" class="space-y-6">
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm text-[#333333] mb-2">First name *</label>
-                <input type="text" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+                <input type="text" name="firstName" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
               </div>
               <div>
                 <label class="block text-sm text-[#333333] mb-2">Last name *</label>
-                <input type="text" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+                <input type="text" name="lastName" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
               </div>
             </div>
             <div>
               <label class="block text-sm text-[#333333] mb-2">Phone Number *</label>
-              <input type="tel" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+              <input type="tel" name="phone" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
             </div>
             <div>
               <label class="block text-sm text-[#333333] mb-2">Email Address *</label>
-              <input type="email" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+              <input type="email" name="email" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
             </div>
             <div>
               <label class="block text-sm text-[#333333] mb-2">I'm interested in...</label>
-              <select class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] bg-white appearance-none cursor-pointer">
+              <select name="interest" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] bg-white appearance-none cursor-pointer">
                 <option value="">Select an option</option>
                 <option value="financial-planning">Financial Planning</option>
                 <option value="insurance">Insurance Selection</option>
                 <option value="investment">Investment Methodologies</option>
                 <option value="business">Business Solutions</option>
+                <option value="career">Career</option>
                 <option value="other">Other</option>
               </select>
             </div>
             <div>
               <label class="block text-sm text-[#333333] mb-2">Message *</label>
-              <textarea required rows="4" placeholder="Tell us about your financial goals or questions..." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] resize-none"></textarea>
+              <textarea name="message" required rows="4" placeholder="Tell us about your financial goals or questions..." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full bg-[#1E3A5F] text-white py-3 font-medium hover:bg-[#1A4F8C] transition-colors">
+            <button type="submit" id="submit-btn" class="w-full bg-[#1E3A5F] text-white py-3 font-medium hover:bg-[#1A4F8C] transition-colors">
               Send Message
             </button>
           </form>
+
+          <!-- Success message -->
+          <div id="form-success" class="hidden text-center py-12">
+            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#1E3A5F] mb-2">Message Sent!</h3>
+            <p class="text-[#666666]">Thank you for reaching out. We will be in touch shortly.</p>
+          </div>
+
+          <!-- Error message -->
+          <div id="form-error" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <p class="text-red-700 text-sm">Something went wrong. Please try again or email us directly at <a href="mailto:kairosadvisorygroup@gmail.com" class="underline">kairosadvisorygroup@gmail.com</a>.</p>
+          </div>
         </div>
 
         <!-- Contact Information -->
@@ -126,4 +143,47 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   </section>
 
   <Footer />
+
+  <script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAv15XemXPeXBdY-Lu5mXbGmk0o4VTEkKKGOTS0liujjklavx3r_atHC7eq9e6fAvu/exec';
+
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const successDiv = document.getElementById('form-success') as HTMLElement;
+    const errorDiv = document.getElementById('form-error') as HTMLElement;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorDiv.classList.add('hidden');
+
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const data = {
+        firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+        lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+        phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+        email: (form.elements.namedItem('email') as HTMLInputElement).value,
+        interest: (form.elements.namedItem('interest') as HTMLSelectElement).value,
+        message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      };
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(data),
+        });
+
+        form.classList.add('hidden');
+        successDiv.classList.remove('hidden');
+      } catch {
+        errorDiv.classList.remove('hidden');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </Layout>
