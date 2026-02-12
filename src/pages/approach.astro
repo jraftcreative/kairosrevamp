@@ -42,16 +42,19 @@ const principles = [
   {
     title: 'Transparency',
     image: `${base}images/principle-transparency.jpg`,
+    imageClass: 'object-cover',
     description: 'We believe in clear, honest communication about fees, risks, and recommendations.',
   },
   {
     title: 'Independence',
     image: `${base}images/principle-independence.jpg`,
+    imageClass: 'object-cover',
     description: 'Our advice is driven by your needs, not product quotas or commission targets.',
   },
   {
     title: 'Excellence',
     image: `${base}images/principle-excellence.jpg`,
+    imageClass: 'object-cover',
     description: 'We continuously enhance our knowledge and skills to serve you better.',
   },
 ];
@@ -111,7 +114,7 @@ const principles = [
             <img
               src={principle.image}
               alt={principle.title}
-              class="w-full h-[250px] md:h-[300px] object-cover mb-6"
+              class={`w-full h-[250px] md:h-[300px] ${principle.imageClass} mb-6`}
             />
             <h3 class="text-xl font-bold text-[#1E3A5F] mb-3">{principle.title}</h3>
             <p class="text-[#666666] leading-relaxed">{principle.description}</p>
@@ -147,7 +150,7 @@ const principles = [
             <img
               src={`${base}images/approach-cta.jpg`}
               alt="Kairos team celebration"
-              class="w-full h-[350px] md:h-[400px] object-cover"
+              class="w-full h-full object-cover"
             />
           </div>
         </div>
