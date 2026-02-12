@@ -1,24 +1,25 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const navigation = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Our Approach', href: '/approach' },
-  { label: 'Services', href: '/services' },
-  { label: 'Our Team', href: '/team' },
-  { label: 'Career', href: '/career' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'About Us', href: `${base}about/` },
+  { label: 'Our Approach', href: `${base}approach/` },
+  { label: 'Services', href: `${base}services/` },
+  { label: 'Our Team', href: `${base}team/` },
+  { label: 'Career', href: `${base}career/` },
+  { label: 'Contact Us', href: `${base}contact/` },
 ];
 
 const legal = [
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Terms', href: '/terms' },
-  { label: 'Privacy', href: '/privacy' },
+  { label: 'FAQ', href: `${base}faq/` },
+  { label: 'Terms', href: `${base}terms/` },
+  { label: 'Privacy', href: `${base}privacy/` },
 ];
 
 const services = [
-  { label: 'Financial Planning', href: '/services/financial-planning' },
-  { label: 'Insurance Selection', href: '/services/insurance-selection' },
-  { label: 'Investment Methodologies', href: '/services/investment-methodologies' },
-  { label: 'Business Solutions', href: '/services/business-solutions' },
+  { label: 'Financial Planning', href: `${base}services/financial-planning/` },
+  { label: 'Insurance Selection', href: `${base}services/insurance-selection/` },
+  { label: 'Investment Methodologies', href: `${base}services/investment-methodologies/` },
+  { label: 'Business Solutions', href: `${base}services/business-solutions/` },
 ];
 ---
 
@@ -26,17 +27,8 @@ const services = [
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
     <!-- Logo -->
     <div class="flex justify-center mb-12">
-      <a href="/" class="flex items-center gap-2">
-        <svg viewBox="0 0 40 40" class="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="36" height="36" rx="4" fill="#1E3A5F"/>
-          <path d="M12 10V30" stroke="white" stroke-width="3" stroke-linecap="round"/>
-          <path d="M12 20L24 10" stroke="white" stroke-width="3" stroke-linecap="round"/>
-          <path d="M12 20L24 30" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div>
-          <span class="text-[#1E3A5F] text-2xl font-bold tracking-wide">KAIROS</span>
-          <span class="block text-[#1E3A5F] text-[10px] tracking-[0.25em] uppercase">Advisory</span>
-        </div>
+      <a href={base}>
+        <img src={`${base}images/kairos-logo.svg`} alt="Kairos Advisory Group" class="h-14 w-auto" />
       </a>
     </div>
 

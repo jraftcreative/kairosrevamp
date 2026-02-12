@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="Contact Us">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto max-w-3xl">
+      <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Contact Us</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
+        Let's Start a Conversation
+      </h1>
+      <p class="text-[#666666] text-lg leading-relaxed">
+        Ready to take control of your financial future? We're here to help. Reach out to schedule a complimentary consultation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form + Contact Info Section -->
+  <section class="pb-16 md:pb-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Form -->
+        <div class="border border-gray-200 rounded-lg p-8">
+          <h2 class="text-xl font-bold text-[#1E3A5F] mb-8">Send us a message</h2>
+          <form class="space-y-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm text-[#333333] mb-2">First name *</label>
+                <input type="text" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+              </div>
+              <div>
+                <label class="block text-sm text-[#333333] mb-2">Last name *</label>
+                <input type="text" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm text-[#333333] mb-2">Phone Number *</label>
+              <input type="tel" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+            </div>
+            <div>
+              <label class="block text-sm text-[#333333] mb-2">Email Address *</label>
+              <input type="email" required class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA]" />
+            </div>
+            <div>
+              <label class="block text-sm text-[#333333] mb-2">I'm interested in...</label>
+              <select class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] bg-white appearance-none cursor-pointer">
+                <option value="">Select an option</option>
+                <option value="financial-planning">Financial Planning</option>
+                <option value="insurance">Insurance Selection</option>
+                <option value="investment">Investment Methodologies</option>
+                <option value="business">Business Solutions</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm text-[#333333] mb-2">Message *</label>
+              <textarea required rows="4" placeholder="Tell us about your financial goals or questions..." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#1E3A5F] text-white py-3 font-medium hover:bg-[#1A4F8C] transition-colors">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-12">
+          <h2 class="text-2xl font-bold text-[#1E3A5F]">Contact Information</h2>
+
+          <!-- Phone -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-[#666666]">Phone</p>
+              <p class="text-lg font-bold text-[#1E3A5F]">+65 6511 8888</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-[#666666]">Email</p>
+              <p class="text-lg font-bold text-[#1E3A5F]">kairosadvisorygroup@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Office Hours -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-[#666666]">Office Hours</p>
+              <p class="text-lg font-bold text-[#1E3A5F]">Mon - Fri: 9am - 6pm</p>
+            </div>
+          </div>
+
+          <hr class="border-gray-200" />
+
+          <!-- Our Office -->
+          <div>
+            <h3 class="text-2xl font-bold text-[#1E3A5F] mb-4">Our Office</h3>
+            <p class="text-[#666666]">Singapore Financial Centre</p>
+            <p class="text-[#666666]">(Part of IPP Financial Advisers Pte Ltd)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

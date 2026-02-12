@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const steps = [
+  {
+    title: 'Discovery',
+    image: `${base}images/approach-discovery.jpg`,
+    description: 'We begin by understanding your current financial situation, goals, and aspirations through an in-depth consultation.',
+  },
+  {
+    title: 'Analysis',
+    image: `${base}images/approach-analysis.png`,
+    description: 'Our team conducts a thorough analysis of your financial data to identify opportunities and areas for improvement.',
+  },
+  {
+    title: 'Planning',
+    image: `${base}images/approach-planning.webp`,
+    description: 'We craft a comprehensive, personalised financial plan tailored to your unique needs and objectives.',
+  },
+  {
+    title: 'Implementation',
+    image: `${base}images/approach-implementation.jpg`,
+    description: 'We execute your financial plan with precision, selecting the best products and strategies for your goals.',
+  },
+  {
+    title: 'Monitoring',
+    image: `${base}images/approach-monitoring.jpg`,
+    description: 'Your plan is continuously monitored to ensure it stays on track and adapts to changing market conditions.',
+  },
+  {
+    title: 'Optimization',
+    image: `${base}images/approach-optimization.jpg`,
+    description: 'We regularly review and optimise your portfolio to maximise returns and minimise risks over time.',
+  },
+];
+
+const principles = [
+  {
+    title: 'Transparency',
+    image: `${base}images/principle-transparency.jpg`,
+    description: 'We believe in clear, honest communication about fees, risks, and recommendations.',
+  },
+  {
+    title: 'Independence',
+    image: `${base}images/principle-independence.jpg`,
+    description: 'Our advice is driven by your needs, not product quotas or commission targets.',
+  },
+  {
+    title: 'Excellence',
+    image: `${base}images/principle-excellence.jpg`,
+    description: 'We continuously enhance our knowledge and skills to serve you better.',
+  },
+];
+---
+
+<Layout title="Our Approach">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto max-w-3xl">
+      <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Our Approach</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
+        A Systematic Path to Financial Success
+      </h1>
+      <p class="text-[#666666] text-lg leading-relaxed">
+        Our proven six-step financial planning process ensures comprehensive, personalised solutions that evolve with your life.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6-Step Process Grid -->
+  <section class="w-full">
+    <div class="grid grid-cols-3 grid-rows-2">
+      {steps.map((step) => (
+        <div class="relative group cursor-pointer overflow-hidden">
+          <img
+            src={step.image}
+            alt={step.title}
+            class="w-full h-[250px] md:h-[350px] object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <!-- Hover fade overlay -->
+          <div class="absolute inset-0 bg-[#1E3A5F]/0 transition-all duration-300 group-hover:bg-[#1E3A5F]/40 flex items-center justify-center">
+            <div class="hidden group-hover:flex flex-col items-center justify-center px-6 text-center">
+              <p class="text-white text-xl md:text-2xl font-serif mb-3">{step.title}</p>
+              <p class="text-white/80 text-sm leading-relaxed max-w-xs">{step.description}</p>
+            </div>
+          </div>
+          <!-- Default: dark bar with title at bottom -->
+          <div class="absolute bottom-0 left-0 right-0 bg-[#1E3A5F] py-3 transition-all duration-300 group-hover:opacity-0">
+            <p class="text-white text-xl md:text-2xl font-serif text-center px-4">{step.title}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Guiding Principles Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-serif text-3xl md:text-4xl text-[#1E3A5F] mb-4">Guiding Principles</h2>
+      <p class="text-[#666666] mb-12">These core principles shape every interaction and recommendation we make.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {principles.map((principle) => (
+          <div>
+            <img
+              src={principle.image}
+              alt={principle.title}
+              class="w-full h-[250px] md:h-[300px] object-cover mb-6"
+            />
+            <h3 class="text-xl font-bold text-[#1E3A5F] mb-3">{principle.title}</h3>
+            <p class="text-[#666666] leading-relaxed">{principle.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[#1E3A5F] py-16 md:py-20 px-6 md:px-12 lg:px-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl text-white leading-tight mb-6">
+            Ready to experience our approach?
+          </h2>
+          <p class="text-white/80 text-lg mb-8">
+            Schedule a complimentary discovery session to see how we can help you achieve your financial goals.
+          </p>
+          <a
+            href={`${base}contact/`}
+            class="inline-block bg-white text-[#1E5FAA] px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
+          >
+            Get Started
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="flex justify-center">
+          <div class="border-4 border-white/30 p-2">
+            <img
+              src={`${base}images/approach-cta.jpg`}
+              alt="Kairos team celebration"
+              class="w-full h-[350px] md:h-[400px] object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
