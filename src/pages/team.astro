@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const teamRow1 = [
+  {
+    name: 'Ronnie',
+    role: 'Group Partner',
+    image: `${base}images/team-ronnie.jpg`,
+    description: 'Early in my career as a financial planner, I was focused on the bottom line. But over the years, my perspective shifted dramatically. I realized that the fundamental product I offer isn\'t just wealth accumulation; it\'s security and peace of mind. My work now centers on providing clients with a clear roadmap of expectations and the assurance needed to navigate their future. Engaging clients\' deepest concerns and reassuring them is where the true meaning lies. The greatest satisfaction of all comes from witnessing a client reach financial freedom\u2014seeing the sheer relief as they are liberated from their job handcuffs to enjoy a well-deserved retirement.',
+  },
+  {
+    name: 'Chermaine',
+    role: 'Financial Advisor',
+    image: `${base}images/team-chermaine.jpg`,
+    description: 'Inspired by her father\'s journey, Chermaine learned early on the importance of planning ahead. After graduating from Singapore Management University (SMU), she joined Kairos and has spent the past three years working alongside clients to grow their wealth with clarity and intention. Chermaine believes that financial planning should be clear, sustainable, and aligned with real life so that the journey together feels balanced, rewarding, and genuinely enjoyable.',
+  },
+  {
+    name: 'Kexin',
+    role: 'Executive Assistant',
+    image: `${base}images/team-kexin.jpg`,
+    description: 'Kexin provides essential administrative and operational support to the Group Partner, ensuring seamless coordination of client meetings, schedules, and documentation. Her meticulous attention to detail and proactive approach keeps the team running efficiently, allowing our advisors to focus on what they do best\u2014serving clients.',
+  },
+  {
+    name: 'Jasmine',
+    role: 'Financial Advisor',
+    image: `${base}images/team-jasmine.jpg`,
+    description: 'Jasmine is in her seventh year in the financial services industry, where she specialises in serving the affluent market and has supported numerous clients in their financial and retirement planning journeys. She derives great satisfaction from seeing her clients achieve their life goals and retire comfortably. Jasmine greatly values Kairos\' strong culture, where inspiring leadership and a collaborative team that is always willing to support and share knowledge truly set the organisation apart.',
+  },
+];
+
+const teamRow2 = [
+  {
+    name: 'Jacob',
+    role: 'Financial Advisor',
+    image: `${base}images/team-jacob.jpg`,
+    description: 'Jacob has been in the finance industry since 2007. Prior to joining Kairos, he worked as a software programmer and made the career switch with a strong desire to help others. He is committed to optimising clients\' cash flow while avoiding unnecessary risks.',
+  },
+  {
+    name: 'Aloysius',
+    role: 'Financial Advisor',
+    image: `${base}images/team-aloysius.jpg`,
+    description: 'Aloysius joined this industry 7 years ago, he specialises in securing a safe and stable passive stream of income for his clients. Having joined Kairos, he finds deep gratitude for his greatest mentor, Ronnie Wong, as well as appreciation for the lovely members in Kairos. He aims to help others by making sure that they\'re well protected in any case of unforeseen circumstances and to be financially free by growing their wealth.',
+  },
+  {
+    name: 'Vivien',
+    role: 'Financial Advisor',
+    image: `${base}images/team-vivien.jpg`,
+    description: 'Vivien has helped hundreds of Singaporean families secure comprehensive protection through tailored insurance solutions.',
+  },
+];
+---
+
+<Layout title="Our Team">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto max-w-3xl">
+      <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Our Team</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
+        Meet Our Financial Experts
+      </h1>
+      <p class="text-[#666666] text-lg leading-relaxed">
+        Our network of professional advisers apply their market knowledge to create comprehensive and customized plans for your wealth.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Row 1 - 4 members -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamRow1.map((member) => (
+          <div>
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full aspect-[3/4] object-cover object-top mb-6"
+            />
+            <h3 class="font-serif text-xl md:text-2xl text-[#1E3A5F] mb-1">{member.name}</h3>
+            <p class="text-[#1E3A5F] italic text-sm mb-3">{member.role}</p>
+            <p class="text-[#666666] text-sm leading-relaxed">{member.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Row 2 -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamRow2.map((member) => (
+          <div>
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full aspect-[3/4] object-cover object-top mb-6"
+            />
+            <h3 class="font-serif text-xl md:text-2xl text-[#1E3A5F] mb-1">{member.name}</h3>
+            <p class="text-[#1E3A5F] italic text-sm mb-3">{member.role}</p>
+            <p class="text-[#666666] text-sm leading-relaxed">{member.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Team CTA -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl text-[#1E3A5F] font-bold leading-tight mb-6">
+            Join Our Team
+          </h2>
+          <p class="text-[#666666] text-lg leading-relaxed mb-8">
+            We're always looking for talented financial professionals who share our commitment to client success and ethical practice. If you're passionate about helping others achieve their financial goals, we'd love to hear from you.
+          </p>
+          <a
+            href={`${base}career/`}
+            class="inline-block bg-[#1E3A5F] text-white px-8 py-3 font-medium hover:bg-[#1A4F8C] transition-colors"
+          >
+            View Opportunities
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div>
+          <img
+            src={`${base}images/team-cta.jpg`}
+            alt="Kairos team"
+            class="w-full h-[350px] md:h-[450px] object-cover rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
