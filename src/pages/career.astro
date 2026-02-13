@@ -54,9 +54,9 @@ const benefits = [
 
   <!-- Benefits Grid - Full Width Images -->
   <section class="w-full">
-    <div class="flex w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
       {benefits.map((benefit) => (
-        <div class="relative group cursor-pointer overflow-hidden flex-1 min-w-0">
+        <div class="relative group cursor-pointer overflow-hidden">
           <img
             src={benefit.image}
             alt={benefit.title}
