@@ -5,8 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jraftcreative.github.io',
-  base: '/kairosrevamp',
+  site: 'https://kairosrevamp.pages.dev',
   vite: {
     plugins: [tailwindcss()]
   }
