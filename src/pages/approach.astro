@@ -65,7 +65,8 @@ const principles = [
 
   <!-- Hero Section -->
   <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
-    <div class="max-w-7xl mx-auto max-w-3xl">
+    <div class="max-w-7xl mx-auto max-w-3xl fade-up">
+      <div class="accent-divider mb-6"></div>
       <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Our Approach</p>
       <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
         A Systematic Path to Financial Success
@@ -105,19 +106,24 @@ const principles = [
   <!-- Guiding Principles Section -->
   <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-serif text-3xl md:text-4xl text-[#1E3A5F] mb-4">Guiding Principles</h2>
-      <p class="text-[#666666] mb-12">These core principles shape every interaction and recommendation we make.</p>
+      <div class="fade-up">
+        <div class="accent-divider mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl text-[#1E3A5F] mb-4">Guiding Principles</h2>
+        <p class="text-[#666666] mb-12">These core principles shape every interaction and recommendation we make.</p>
+      </div>
 
-      <div class="grid md:grid-cols-3 gap-4 md:gap-8">
+      <div class="grid md:grid-cols-3 gap-4 md:gap-8 fade-up-children">
         {principles.map((principle) => (
-          <div>
+          <div class="card-hover rounded-lg overflow-hidden">
             <img
               src={principle.image}
               alt={principle.title}
-              class={`w-full h-[250px] md:h-[300px] ${principle.imageClass} mb-6`}
+              class={`w-full h-[250px] md:h-[300px] ${principle.imageClass} rounded-t-lg`}
             />
-            <h3 class="text-xl font-bold text-[#1E3A5F] mb-3">{principle.title}</h3>
-            <p class="text-[#666666] leading-relaxed">{principle.description}</p>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#1E3A5F] mb-3">{principle.title}</h3>
+              <p class="text-[#666666] leading-relaxed">{principle.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -138,7 +144,7 @@ const principles = [
           </p>
           <a
             href={`${base}contact/`}
-            class="inline-block bg-white text-[#1E5FAA] px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
+            class="inline-block bg-white text-[#1E5FAA] px-8 py-3 rounded font-medium hover:bg-gray-100 transition-colors"
           >
             Get Started
           </a>

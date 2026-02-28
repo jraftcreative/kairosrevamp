@@ -11,7 +11,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   <!-- Hero Section -->
   <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
-    <div class="max-w-7xl mx-auto max-w-3xl">
+    <div class="max-w-7xl mx-auto max-w-3xl fade-up">
+      <div class="accent-divider mb-6"></div>
       <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Contact Us</p>
       <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
         Let's Start a Conversation
@@ -24,7 +25,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   <!-- Form + Contact Info Section -->
   <section class="pb-16 md:pb-24 px-6 md:px-12 lg:px-20 bg-white">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto fade-up">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
         <!-- Form -->
         <div class="border border-gray-200 rounded-lg p-8">
@@ -64,7 +65,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
               <label class="block text-sm text-[#333333] mb-2">Message *</label>
               <textarea name="message" required rows="4" placeholder="Tell us about your financial goals or questions..." class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#1E5FAA] resize-none"></textarea>
             </div>
-            <button type="submit" id="submit-btn" class="w-full bg-[#1E3A5F] text-white py-3 font-medium hover:bg-[#1A4F8C] transition-colors">
+            <button type="submit" id="submit-btn" class="w-full bg-[#1E3A5F] text-white py-3 rounded font-medium hover:bg-[#1A4F8C] transition-colors">
               Send Message
             </button>
           </form>
