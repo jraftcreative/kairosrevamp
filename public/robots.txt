@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kairos-advisorygroup.com/sitemap-index.xml

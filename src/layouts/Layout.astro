@@ -4,9 +4,13 @@ import '../styles/global.css'
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Expert financial planning and advisory services" } = Astro.props;
+const { title, description = "Expert financial planning and advisory services in Singapore. Independent, client-first advice from Kairos Advisory Group.", ogImage } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === 'Home' ? 'Kairos Advisory Group | Independent Financial Planning Singapore' : `${title} | Kairos Advisory Group`;
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site).href : new URL('/images/hero-team.jpg', Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -15,11 +19,57 @@ const { title, description = "Expert financial planning and advisory services" }
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Kairos Advisory Group" />
+    <meta property="og:locale" content="en_SG" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>{title} | Kairos Advisory</title>
+
+    <title>{fullTitle}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Kairos Advisory Group",
+      "url": "https://kairos-advisorygroup.com",
+      "logo": "https://kairos-advisorygroup.com/images/kairos-logo.svg",
+      "description": "Independent financial planning and advisory services in Singapore. Comprehensive solutions for individuals, families, and businesses.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SG"
+      },
+      "telephone": "+65 6511 8888",
+      "email": "kairosadvisorygroup@gmail.com",
+      "sameAs": [],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      "serviceType": ["Financial Planning", "Investment Advisory", "Insurance Selection", "Business Solutions"],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "IPP Financial Advisers Pte Ltd",
+        "url": "https://ippfa.com"
+      }
+    })} />
   </head>
   <body class="font-sans antialiased">
     <slot />
