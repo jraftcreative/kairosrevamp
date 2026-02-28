@@ -10,15 +10,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   <Header />
   
   <!-- Hero Section -->
-  <section class="flex flex-col w-full md:h-[calc(100vh-80px)]">
-    <div class="flex-1 min-h-0 overflow-hidden">
+  <section class="flex flex-col w-full">
+    <div class="w-full bg-[#8a7d6b]">
       <img
         src={`${base}images/hero-team.jpg`}
         alt="Kairos Advisory Team"
-        class="w-full h-auto md:h-full object-cover object-top"
+        class="w-full h-auto object-contain"
       />
     </div>
-    <div class="flex-shrink-0 px-6 md:px-12 lg:px-20 py-4 md:py-8">
+    <div class="px-6 md:px-12 lg:px-20 py-4 md:py-8">
       <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight">
         Financial Planning Made Simple.
       </h1>
