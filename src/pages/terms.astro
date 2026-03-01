@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="Terms of Service" description="Terms of Service for the Kairos Advisory Group website. Please read these terms carefully before using our website or services.">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto max-w-3xl fade-up">
+      <div class="accent-divider mb-6"></div>
+      <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Legal</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
+        Terms of Service
+      </h1>
+      <p class="text-[#666666] text-lg leading-relaxed">
+        Please read these Terms of Service carefully before using the Kairos Advisory Group website. By accessing or using our website, you agree to be bound by these terms.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="pb-16 md:pb-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto fade-up">
+      <div class="max-w-3xl space-y-12">
+
+        <!-- Acceptance of Terms -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Acceptance of Terms</h2>
+          <p class="text-[#666666] leading-relaxed">
+            By accessing and using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.
+          </p>
+        </div>
+
+        <!-- Informational Purpose -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Informational Purpose</h2>
+          <p class="text-[#666666] leading-relaxed">
+            The content on this website is provided for general informational purposes only. It does not constitute personal financial advice, a recommendation, or an offer to buy or sell any financial product. You should consult a qualified financial adviser before making any financial decisions. Kairos Advisory Group operates under IPP Financial Advisers Pte Ltd.
+          </p>
+        </div>
+
+        <!-- No Guarantee -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">No Guarantee of Results</h2>
+          <p class="text-[#666666] leading-relaxed">
+            While we strive to provide accurate and up-to-date information, we make no representations or warranties regarding the completeness, accuracy, or reliability of any content on this website. Past performance is not indicative of future results. Financial outcomes depend on individual circumstances, and results may vary.
+          </p>
+        </div>
+
+        <!-- Intellectual Property -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Intellectual Property</h2>
+          <p class="text-[#666666] leading-relaxed">
+            All content on this website — including text, images, logos, graphics, and design — is the property of Kairos Advisory Group or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, or use any content from this website without our prior written permission.
+          </p>
+        </div>
+
+        <!-- Limitation of Liability -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Limitation of Liability</h2>
+          <p class="text-[#666666] leading-relaxed">
+            To the fullest extent permitted by law, Kairos Advisory Group shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website or reliance on any information provided. This includes, but is not limited to, any loss of profits, data, or business opportunities.
+          </p>
+        </div>
+
+        <!-- Third-Party Links -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Third-Party Links</h2>
+          <p class="text-[#666666] leading-relaxed">
+            Our website may contain links to third-party websites, including our parent organisation IPP Financial Advisers Pte Ltd. These links are provided for your convenience only. We do not endorse or assume responsibility for the content, privacy policies, or practices of any third-party websites.
+          </p>
+        </div>
+
+        <!-- Governing Law -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Governing Law</h2>
+          <p class="text-[#666666] leading-relaxed">
+            These Terms of Service are governed by and construed in accordance with the laws of the Republic of Singapore. Any disputes arising from or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of Singapore.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Contact Us</h2>
+          <p class="text-[#666666] leading-relaxed">
+            If you have any questions about these Terms of Service, please contact us at
+            <a href="mailto:kairosadvisorygroup@gmail.com" class="text-[#1E5FAA] hover:underline">kairosadvisorygroup@gmail.com</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

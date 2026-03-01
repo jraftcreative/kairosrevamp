@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="Privacy Policy" description="Learn how Kairos Advisory Group collects, uses, and protects your personal data in accordance with the Singapore Personal Data Protection Act (PDPA).">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto max-w-3xl fade-up">
+      <div class="accent-divider mb-6"></div>
+      <p class="text-sm font-semibold tracking-widest text-[#1E3A5F] uppercase mb-4">Legal</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1E3A5F] leading-tight mb-8">
+        Privacy Policy
+      </h1>
+      <p class="text-[#666666] text-lg leading-relaxed">
+        Kairos Advisory Group is committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information in accordance with the Singapore Personal Data Protection Act (PDPA).
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="pb-16 md:pb-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto fade-up">
+      <div class="max-w-3xl space-y-12">
+
+        <!-- Information We Collect -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Information We Collect</h2>
+          <p class="text-[#666666] leading-relaxed mb-4">
+            When you interact with our website, we may collect the following personal data:
+          </p>
+          <ul class="list-disc list-inside text-[#666666] leading-relaxed space-y-2 ml-2">
+            <li>Your name (first and last)</li>
+            <li>Phone number</li>
+            <li>Email address</li>
+            <li>Area of interest (e.g. financial planning, insurance, investments)</li>
+            <li>Any additional information you provide in your message</li>
+          </ul>
+          <p class="text-[#666666] leading-relaxed mt-4">
+            We may also collect basic usage data such as your browser type, pages visited, and referring website to help us improve our site.
+          </p>
+        </div>
+
+        <!-- How We Use Your Information -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">How We Use Your Information</h2>
+          <p class="text-[#666666] leading-relaxed mb-4">
+            We use the personal data we collect for the following purposes:
+          </p>
+          <ul class="list-disc list-inside text-[#666666] leading-relaxed space-y-2 ml-2">
+            <li>Responding to your enquiries and messages</li>
+            <li>Providing financial advisory services you have requested</li>
+            <li>Communicating relevant updates or information related to your enquiry</li>
+            <li>Improving our website and services</li>
+          </ul>
+          <p class="text-[#666666] leading-relaxed mt-4">
+            We will not use your personal data for marketing purposes without your explicit consent.
+          </p>
+        </div>
+
+        <!-- Third-Party Services -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Third-Party Services</h2>
+          <p class="text-[#666666] leading-relaxed">
+            We use secure third-party services to process and store form submissions. These services are selected for their reliability and adherence to data protection standards. We do not sell, rent, or share your personal data with third parties for their own marketing purposes.
+          </p>
+        </div>
+
+        <!-- Data Protection -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Data Protection</h2>
+          <p class="text-[#666666] leading-relaxed">
+            We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. While no method of electronic transmission or storage is completely secure, we take reasonable steps to ensure your information is protected.
+          </p>
+        </div>
+
+        <!-- Your Rights Under PDPA -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Your Rights Under the PDPA</h2>
+          <p class="text-[#666666] leading-relaxed mb-4">
+            Under the Singapore Personal Data Protection Act, you have the right to:
+          </p>
+          <ul class="list-disc list-inside text-[#666666] leading-relaxed space-y-2 ml-2">
+            <li><strong>Access</strong> the personal data we hold about you</li>
+            <li><strong>Correct</strong> any inaccurate or incomplete personal data</li>
+            <li><strong>Withdraw consent</strong> for the collection, use, or disclosure of your personal data</li>
+          </ul>
+          <p class="text-[#666666] leading-relaxed mt-4">
+            Please note that withdrawing consent may affect our ability to provide certain services to you.
+          </p>
+        </div>
+
+        <!-- Contact for Privacy Matters -->
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#1E3A5F] mb-4">Contact Us</h2>
+          <p class="text-[#666666] leading-relaxed">
+            If you have any questions about this Privacy Policy or wish to exercise your rights under the PDPA, please contact us at
+            <a href="mailto:kairosadvisorygroup@gmail.com" class="text-[#1E5FAA] hover:underline">kairosadvisorygroup@gmail.com</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
